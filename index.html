@@ -7,6 +7,8 @@
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+
 </head>
 <body>
 
@@ -24,10 +26,9 @@
 
         	<span class="moves">0</span> Moves
             
-            <div class = "timer">
-                Timer: 
-            <span class="sec">0</span> secs
-            <span class="min">0</span> mins
+            <div class = "timer">00:00
+            <!-- <span class="sec">00</span>:
+            <span class="min">00</span> -->
             </div>
 
             <div class="restart">
@@ -85,6 +86,13 @@
                 <i class="fa fa-cube"></i>
             </li>
         </ul>
+    </div>
+    <div class="congMessage">
+        <h1>congratulations you won!!!</h1>
+        <ul id = "starRate" class="stars"></ul>
+        <p class="game-info">you made <span class="finalMoves"></span> Moves <br>in <span class= "finalTime"></span>.</p>
+        <button class="play-btn">Play Again :)</button>
+        <button class="thanks-btn">No Thanks.</button>
     </div>
 
     <script src="js/app.js"></script>
