@@ -40,8 +40,8 @@ h1 {
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
+    width: 600px;
+    min-height: 600px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
     border-radius: 10px;
@@ -199,7 +199,12 @@ h1 {
 
 .score-panel .timer {
     display: inline-block;
-    margin-left: 8%;
+    margin-left: 20%;
+}
+
+.score-panel .moves {
+    margin-left: 3%;
+    margin-right: 1%;
 }
 
 .congMessage {
@@ -209,12 +214,10 @@ h1 {
     animation-duration: .75s;
     border: 1px solid black;
     border-radius: 10px;
-    position: fixed;
+    position: absolute;
+    top: 30%;
+    left: 38%;
     z-index: 10;
-    top: 50vh;
-    bottom: 0;
-    left: 50vw;
-    right: 0;
     background: rgba(0, 0, 0, 0.7);
     transition: opacity 500ms;
     visibility: visible;
@@ -251,5 +254,5 @@ h1 {
 }
 
 .game-info {
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
