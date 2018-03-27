@@ -77,7 +77,7 @@ function startGame() {
 // set the timer, the moves counter, empty the opened cards array and remove all classes added throughout the last game
 function setGame() {
 
-    // congrats.style.display = "none";
+    congrats.style.display = "none";
     timer.textContent = "00:00";
     clearInterval(time);
     setTimer();
@@ -199,7 +199,7 @@ function setTimer() {
 
 //@Description to print out a congratulatinos message depending on the final rate and time
 function gameEnd() {
-    if (matchCards.length === 2) {
+    if (matchCards.length === 16) {
         finalTime.textContent = timer.innerHTML;
         finalMoves.innerHTML = count;
         clearInterval(time);
