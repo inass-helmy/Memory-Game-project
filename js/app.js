@@ -84,8 +84,8 @@ function setGame() {
     count = 0;
     moves.innerHTML = count;
     openedList = [];
-    thirdStar.style.display = "initial";
-    secondStar.style.display = "initial";
+    thirdStar.style.color = "#FFD700";
+    secondStar.style.color = "#FFD700";
     for (let i = 0; i < shuffledCards.length; i++) {
         shuffledCards[i].classList.remove("show", "open", "match", "no-click");
     }
