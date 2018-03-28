@@ -199,19 +199,19 @@ function setTimer() {
 
 //@Description to print out a congratulatinos message depending on the final rate and time
 function gameEnd() {
-    if (matchCards.length === 16) {
+    if (matchCards.length === 2) {
         finalTime.textContent = timer.innerHTML;
         finalMoves.innerHTML = count;
         clearInterval(time);
-        for (var i = 0; i < shuffledCards.length; i++) {
-            shuffledCards[i].classList.add("no-click");
-            shuffledCards[i].classList.remove("show", "open", "match");
-        }
-
         congrats.style.display = "initial";
         var finalStars = document.querySelector(".stars").innerHTML;
         starRate.innerHTML = finalStars;
-
+        setTimeout(function(){
+			for (var i = 0; i < shuffledCards.length; i++) {
+	            shuffledCards[i].classList.add("no-click");
+	            shuffledCards[i].classList.remove("show", "open", "match");
+        }
+        },2000);
         playAgain.addEventListener("click", function() {
             shuffledCards = shuffle(cardList);
 
