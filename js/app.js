@@ -41,10 +41,10 @@ document.onload = startGame();
 
 //@Description to start the game 
 function startGame() {
-    // add the new shuffled cards to the deck
-    shuffledCards = shuffle(cardList);
+   
     setGame();
-
+    
+    // add the new shuffled cards to the deck
     for (let i = 0; i < shuffledCards.length; i++) {
         [].forEach.call(shuffledCards, function(elem) {
             deck.append(elem);
@@ -66,9 +66,10 @@ function startGame() {
     }
 
     //handling the restart button
-    restart.addEventListener("click", function(evt) {
+    restart.addEventListener("click", function() {
         var message = confirm("Are you sure?");
         if (message) {
+
             setGame();
         }
     });
@@ -76,7 +77,8 @@ function startGame() {
 
 // set the timer, the moves counter, empty the opened cards array and remove all classes added throughout the last game
 function setGame() {
-
+    
+    shuffledCards = shuffle(cardList);
     congrats.style.display = "none";
     timer.textContent = "00:00";
     clearInterval(time);
@@ -203,18 +205,16 @@ function gameEnd() {
         finalTime.textContent = timer.innerHTML;
         finalMoves.innerHTML = count;
         clearInterval(time);
-        congrats.style.display = "initial";
         var finalStars = document.querySelector(".stars").innerHTML;
         starRate.innerHTML = finalStars;
         setTimeout(function(){
+	        congrats.style.display = "initial";
 			for (var i = 0; i < shuffledCards.length; i++) {
 	            shuffledCards[i].classList.add("no-click");
 	            shuffledCards[i].classList.remove("show", "open", "match");
         }
-        },2000);
+        },1000);
         playAgain.addEventListener("click", function() {
-            shuffledCards = shuffle(cardList);
-
             setGame();
         });
 
