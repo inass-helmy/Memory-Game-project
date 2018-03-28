@@ -41,14 +41,10 @@ document.onload = startGame();
 
 //@Description to start the game 
 function startGame() {
-   
+    
     setGame();
     
-    // add the new shuffled cards to the deck
     for (let i = 0; i < shuffledCards.length; i++) {
-        [].forEach.call(shuffledCards, function(elem) {
-            deck.append(elem);
-        });
 
         // display and check if a two cards was clicked matched or not
         shuffledCards[i].addEventListener("click", function display() {
@@ -77,20 +73,26 @@ function startGame() {
 
 // set the timer, the moves counter, empty the opened cards array and remove all classes added throughout the last game
 function setGame() {
-    
-    shuffledCards = shuffle(cardList);
+//make the congratulations message disappear.
     congrats.style.display = "none";
+
+//shuffle the cards    
+    shuffledCards = shuffle(cardList);
+// add the new shuffled cards to the deck
+    [].forEach.call(shuffledCards, function(elem) {
+            deck.append(elem);
+            elem.classList.remove("show", "open", "match", "no-click");
+        });
+//reset the timer and moves counter
     timer.textContent = "00:00";
     clearInterval(time);
     setTimer();
     count = 0;
     moves.innerHTML = count;
     openedList = [];
+//let the stars get back to its initial state
     thirdStar.style.color = "#FFD700";
     secondStar.style.color = "#FFD700";
-    for (let i = 0; i < shuffledCards.length; i++) {
-        shuffledCards[i].classList.remove("show", "open", "match", "no-click");
-    }
 }
 
 
@@ -201,7 +203,7 @@ function setTimer() {
 
 //@Description to print out a congratulatinos message depending on the final rate and time
 function gameEnd() {
-    if (matchCards.length === 2) {
+    if (matchCards.length === 16) {
         finalTime.textContent = timer.innerHTML;
         finalMoves.innerHTML = count;
         clearInterval(time);
@@ -215,6 +217,7 @@ function gameEnd() {
         }
         },1000);
         playAgain.addEventListener("click", function() {
+            shuffledCards = shuffle(cardList);
             setGame();
         });
 
