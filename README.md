@@ -3,6 +3,7 @@ This project is part of the Google/Udacity Nano-degree program.
 This is a simple game built to test a users memory. There's a deck of cards with different icons.
 
 #How to play the game:
+
 1- The user should click on those icons to let the card flip.
 2- If two cards match they will stay opened and if they don't match they will flip again and the user have a new trial.
 3- There is a star rating system on the game which decrease astar according to the number of moves the user takes.
