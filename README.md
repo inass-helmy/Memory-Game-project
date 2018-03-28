@@ -1,7 +1,7 @@
 # Memory Game Project
 This project is part of the Google/Udacity Nano-degree program.
 This is a simple game built to test a users memory. There's a deck of cards with different icons.
-![snippet](img/game-snap-shot.png)
+![snippet](img/game-snippet.png)
 
 ## How to play the game:
 
