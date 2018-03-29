@@ -48,12 +48,10 @@ function startGame() {
 
         // display and check if a two cards was clicked matched or not
         shuffledCards[i].addEventListener("click", function display() {
-            displayMove();
+            starRating()
             this.classList.add("open");
             this.classList.add("show");
             this.classList.add("no-click");
-
-            // displayMove(this);
             if (this.classList.contains("match") === false) {
 
                 checkMatch(shuffledCards[i]);
@@ -100,6 +98,10 @@ function setGame() {
 function checkMatch(openedCard) {
     openedList = deck.querySelectorAll(".open");
     if (openedList.length === 2) {
+ //count the moves and display the number to screen
+    	count++;
+    	moves.innerHTML = count;
+ //disable all cards while comparing
         for (var i = 0; i < shuffledCards.length; i++) {
             shuffledCards[i].classList.add("no-click");
         }
@@ -159,14 +161,12 @@ function shuffle(array) {
     return array;
 }
 
-//@Description to count the moves of the users and displays it on screen
-function displayMove() {
-    count++;
-    moves.innerHTML = count;
-    if (count > 30 && count <= 40) {
+//@Description to count the moves of the users and display the star rating
+function starRating() {
+    if (count > 15 && count <= 20) {
         thirdStar.style.color = "#404040";
     }
-    if (count > 40) {
+    if (count > 20) {
         secondStar.style.color = "#404040";
 
     }

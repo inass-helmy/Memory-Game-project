@@ -4,6 +4,7 @@
       <meta charset="utf-8">
       <title>Matching Game</title>
       <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
       <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
       <link rel="stylesheet" href="css/app.css">
@@ -30,7 +31,8 @@
                <i class="fa fa-repeat"></i>
             </div>
          </section>
-         <ul class="deck">
+         <div class = "front">
+            <ul class="deck">
             <li class="card" type="diamond">
                <i class="fa fa-diamond"></i>
             </li>
@@ -80,13 +82,16 @@
                <i class="fa fa-cube"></i>
             </li>
          </ul>
-      </div>
-      <div class="congMessage">
-         <h1>congratulations you won!!!</h1>
+         <div class="congMessage">
+             <h1>congratulations you won!!!</h1>
          <ul id = "starRate" class="stars"></ul>
          <p class="game-info">you won in <span class="finalMoves"></span> Moves <br>Time: <span class= "finalTime"></span></p>
          <button class="thanks-btn">No Thanks.</button>
-         <button class="play-btn">Play Again</button>
+         <button class="play-btn">Play Again 😄</button>
+         </div>
+         
+      </div>
+
       </div>
       <script src="js/app.js"></script>
    </body>
